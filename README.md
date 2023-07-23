@@ -27,4 +27,5 @@ println!("{}", myvec); // Prints out [42, "Meaning of life", true]
 - [ ] Finish tests
 - [ ] Write documentation
 - [ ] Write examples
-- [ ] Publish On `crates.io`
+- [ ] Setup CI
+- [ ] Publish on `crates.io`

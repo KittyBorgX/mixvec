@@ -1,7 +1,6 @@
 pub mod cmp;
 pub mod display;
 pub mod from;
-pub mod into;
 pub mod ops;
 
 #[derive(Debug, Clone)]
