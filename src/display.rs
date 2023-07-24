@@ -1,4 +1,5 @@
-use crate::{MixVec, MixVecElement};
+use crate::MixVec;
+use crate::MixVecElement;
 
 impl std::fmt::Display for MixVec {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
@@ -13,20 +14,9 @@ impl std::fmt::Display for MixVec {
                 MixVecElement::String(s) => write!(f, "\"{}\"", s)?,
                 MixVecElement::Boolean(b) => write!(f, "{}", b)?,
                 MixVecElement::Character(c) => write!(f, "{}", c)?,
+                MixVecElement::Custom(c) => write!(f, "{:?}", c)?,
             }
         }
         write!(f, "]")
-    }
-}
-
-impl std::fmt::Display for MixVecElement {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        match self {
-            MixVecElement::Integer(val) => write!(f, "{}", val),
-            MixVecElement::Float(val) => write!(f, "{}", val),
-            MixVecElement::String(val) => write!(f, "{}", val),
-            MixVecElement::Boolean(val) => write!(f, "{}", val),
-            MixVecElement::Character(val) => write!(f, "{}", val),
-        }
     }
 }

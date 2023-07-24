@@ -1,6 +1,7 @@
 use std::ops::Index;
 
-use crate::{MixVec, MixVecElement};
+use crate::MixVec;
+use crate::MixVecElement;
 
 impl From<i32> for MixVecElement {
     fn from(value: i32) -> Self {

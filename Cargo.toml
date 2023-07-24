@@ -2,7 +2,18 @@
 name = "mixvec"
 version = "0.1.0"
 edition = "2021"
+description = "A crate for the MixVec data structure."
+license = "MIT"
+repository = "https://github.com/KittyBorgX/mixvec"
+readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "mixvec"
+path = "src/lib.rs"
+crate-type = ["rlib", "dylib"]
 
 [dependencies]
+mixvec-derive = {path="mixvec-derive", optional=true}
+
+[features]
+derive-macro = ["mixvec-derive"]

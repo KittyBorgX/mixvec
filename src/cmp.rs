@@ -1,7 +1,6 @@
 use std::cmp::Ordering;
 
 use crate::MixVecElement;
-
 impl PartialEq for MixVecElement {
     fn eq(&self, other: &Self) -> bool {
         use MixVecElement::*;

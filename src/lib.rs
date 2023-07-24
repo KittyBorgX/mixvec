@@ -1,19 +1,30 @@
-pub mod cmp;
-pub mod display;
-pub mod from;
-pub mod ops;
+mod cmp;
+mod display;
+mod from;
+mod ops;
 
-#[derive(Debug, Clone)]
-pub struct MixVec {
-    data: Vec<MixVecElement>,
+pub mod mixvec_derive {
+    pub use crate::CustomType;
+    pub use crate::MixVecElement;
+    #[cfg(feature = "derive-macro")]
+    pub use mixvec_derive::MixVecDerive;
 }
-#[derive(Debug, Clone)]
+
+#[derive(Debug)]
 pub enum MixVecElement {
     Integer(i32),
     Float(f64),
     String(String),
     Boolean(bool),
     Character(char),
+    Custom(Box<dyn CustomType>),
+}
+
+pub trait CustomType: std::fmt::Debug {}
+
+#[derive(Debug)]
+pub struct MixVec {
+    data: Vec<MixVecElement>,
 }
 
 impl MixVec {
