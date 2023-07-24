@@ -28,8 +28,7 @@ fn different_type_elements() {
     v.push(3.14);
     v.push(false);
     v.push('A');
-    // v.push(MyCustomStruct::new());
-    assert_eq!(v.len(), 6);
+    assert_eq!(v.len(), 5);
     assert_eq!(v[0], MixVecElement::Integer(1));
     assert_eq!(v[1], MixVecElement::String("Hello world".to_string()));
     assert_eq!(v[2], MixVecElement::Float(3.14));
